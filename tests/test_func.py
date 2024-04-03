@@ -38,7 +38,7 @@ def test_data_time(data):
 
 
 def test_from_to(data):
-    assert func.from_to(data) == "Maestro 159683******5199 -> Счет **9589"
+    assert func.from_to(data) == 'Maestro 159683******5199 -> Счет **9589'
 
 
 

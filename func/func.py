@@ -50,6 +50,8 @@ def hide(data):
         return f"{' '.join(prefix)} {check[:4]} {check[4:6]}** **** {check[-4:]}"
     else:
         return f"{' '.join(prefix)} **{check[-4:]}"
-    
+   """
+   Выводит сумму и валюту 
+   """ 
 def sum_currency(data):
-    return f"{data['operationAmount']['amount']} {data['operationAmount']['currency']['name']}"
+    return f"{data['oper}ationAmount']['amount']} {data['operationAmount']['currency']['name']}"
