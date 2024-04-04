@@ -1,4 +1,3 @@
-import json 
 import pytest
 from func import func
 
@@ -18,8 +17,8 @@ data = {
                                     "to": "Счет 64686473678894779589"
                                       }
 
-def test_load_operation(data):
-    pass 
+def test_load_operation():
+    assert func.load_operation('load.json') == [data]
             
 
 
@@ -27,25 +26,21 @@ def test_load_operation(data):
 
 
 
-def test_data_time(data):
+def test_date_time():
     pass
 
 
 
-
-
-
-
-
-def test_from_to(data):
-    assert func.from_to(data) == 'Maestro 159683******5199 -> Счет **9589'
+def test_from_to():
+    assert func.from_to(data) == 'Maestro 1596 83** **** 5199 -> Счет **9589'
 
 
 
 def test_hide():
-    pass
+    assert func.hide('Maestro 1596837868705199') == 'Maestro 1596 83** **** 5199'
+    assert func.hide('Счет 64686473678894779589') == 'Счет **9589'
 
 
 
 def test_sum_currency():
-    pass
+    assert func.sum_currency(data) == '8221.37 USD'
